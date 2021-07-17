@@ -51,11 +51,41 @@ export default {
         // In case it's added as offchart overlay
         y_range() {
             var hi = -Infinity, lo = Infinity
+            console.log("tangping")
+            console.log(this.$parent.data)
+            var pdata = this.$parent.data;
+            for (var i = 0; i<pdata.length; i++) {
+                //console.log(i)
+                if (pdata[i]["type"] == "Trades") {
+                    continue;
+                }
+
+                if (pdata[i]["type"] == "Candles") {
+                    for (var j = 0; j<pdata[i]["data"].length; j++) {
+                        //console.log(j)
+                        if (pdata[i]["data"][j][2] > hi) hi = pdata[i]["data"][j][k]
+                        if (pdata[i]["data"][j][3] < lo) lo = pdata[i]["data"][j][k]
+                    }
+                }
+                else {
+                    for (var j = 0; j<pdata[i]["data"].length; j++) {
+                        //console.log(j)
+                        for (var k = 1; k<pdata[i]["data"][j].length; k++) {
+                            //console.log(k)
+                            if (pdata[i]["data"][j][k] > hi) hi = pdata[i]["data"][j][k]
+                            if (pdata[i]["data"][j][k] < lo) lo = pdata[i]["data"][j][k]
+                        }
+                    }
+                }
+            }
+            console.log("yeah", hi, lo)
+            /*
             for (var i = 0, n = this.sub.length; i < n; i++) {
                 let x = this.sub[i]
                 if (x[2] > hi) hi = x[2]
                 if (x[3] < lo) lo = x[3]
             }
+            */
             return [hi, lo]
         }
     },
