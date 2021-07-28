@@ -10,6 +10,7 @@ export default {
             if (this._data_n0 !== n[0] && this._data_len !== n.length) {
                 changed = true
             }
+            this.save_data_t() //update saved offset
             this.check_all_data(changed)
             if (this.ti_map.ib) {
                 this.reindex_delta(n[0], this._data_n0)

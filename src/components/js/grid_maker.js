@@ -45,40 +45,46 @@ function GridMaker(id, params, master_grid = null) {
                 }
             }
 
-            var rstart = sub[0][0]
-            var rend = sub[sub.length-1][0]
+            //console.log("hilo", hi, lo)
+            //console.log("params", params)
+            //console.trace()
 
-            var pdata = $p.data.onchart;
-            console.log("pdata", pdata)
+            if (sub.length > 0 && false) {
+                var rstart = sub[0][0]
+                var rend = sub[sub.length-1][0]
 
-            for (var i=0; i<pdata.length; i++ ) {
-                if (pdata[i]["type"] == "Trades") {
-                    continue;
-                }
+                var pdata = $p.data.onchart;
+                console.log("pdata", pdata)
 
-                if (pdata[i]["data"].length<=0) {
-                continue;
-                }
-
-                console.log("loop", i, pdata[i])
-
-                if (pdata[i]["type"] == "Candles") {
-                    continue; //no way, this is onchart
-                    for (var j = rstart; j<rend; j++) {
-                    //for (var j = 0; j<pdata[i]["data"].length; j++) {
-                        //console.log(j)
-                        if (pdata[i]["data"][j][2] > hi) hi = pdata[i]["data"][j][k]
-                        if (pdata[i]["data"][j][3] < lo) lo = pdata[i]["data"][j][k]
+                for (var i=0; i<pdata.length; i++ ) {
+                    if (pdata[i]["type"] == "Trades") {
+                        continue;
                     }
-                }
-                else {
-                    for (var j = rstart; j<rend && j<pdata[i]["data"].length; j++) {
-                    //for (var j = 0; j<pdata[i]["data"].length; j++) {
-                        //console.log(j)
-                        for (var k = 1; k<pdata[i]["data"][j].length; k++) {
-                            //console.log(k)
-                            if (pdata[i]["data"][j][k] > hi) hi = pdata[i]["data"][j][k]
-                            if (pdata[i]["data"][j][k] < lo) lo = pdata[i]["data"][j][k]
+
+                    if (pdata[i]["data"].length<=0) {
+                    continue;
+                    }
+
+                    console.log("loop", i, pdata[i])
+
+                    if (pdata[i]["type"] == "Candles") {
+                        continue; //no way, this is onchart
+                        for (var j = rstart; j<rend; j++) {
+                        //for (var j = 0; j<pdata[i]["data"].length; j++) {
+                            //console.log(j)
+                            if (pdata[i]["data"][j][2] > hi) hi = pdata[i]["data"][j][k]
+                            if (pdata[i]["data"][j][3] < lo) lo = pdata[i]["data"][j][k]
+                        }
+                    }
+                    else {
+                        for (var j = rstart; j<rend && j<pdata[i]["data"].length; j++) {
+                        //for (var j = 0; j<pdata[i]["data"].length; j++) {
+                            //console.log(j)
+                            for (var k = 1; k<pdata[i]["data"][j].length; k++) {
+                                //console.log(k)
+                                if (pdata[i]["data"][j][k] > hi) hi = pdata[i]["data"][j][k]
+                                if (pdata[i]["data"][j][k] < lo) lo = pdata[i]["data"][j][k]
+                            }
                         }
                     }
                 }
