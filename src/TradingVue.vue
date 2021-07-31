@@ -97,19 +97,23 @@ export default {
         },
         colorCandleUp: {
             type: String,
-            default: '#23a776'
+            default: '#e54150'
+            //default: '#23a776'
         },
         colorCandleDw: {
             type: String,
-            default: '#e54150'
+            //default: '#e54150'
+            default: '#23a776'
         },
         colorWickUp: {
             type: String,
-            default: '#23a77688'
+            default: '#e54150'
+            //default: '#23a77688'
         },
         colorWickDw: {
             type: String,
-            default: '#e5415088'
+            //default: '#e5415088'
+            default: '#23a776'
         },
         colorWickSm: {
             type: String,
@@ -117,11 +121,13 @@ export default {
         },
         colorVolUp: {
             type: String,
-            default: '#79999e42'
+            //default: '#79999e42'
+            default: '#ef535042'
         },
         colorVolDw: {
             type: String,
-            default: '#ef535042'
+            //default: '#ef535042'
+            default: '#79999e42'
         },
         colorPanel: {
             type: String,

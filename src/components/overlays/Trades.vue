@@ -78,10 +78,12 @@ export default {
             return '12px ' + this.$props.font.split('px').pop()
         },
         buy_color() {
-            return this.sett.buyColor || '#63df89'
+            //return this.sett.buyColor || '#63df89'
+            return this.sett.sellColor || '#ec4662'
         },
         sell_color() {
-            return this.sett.sellColor || '#ec4662'
+            //return this.sett.sellColor || '#ec4662'
+            return this.sett.buyColor || '#63df89'
         },
         label_color() {
             return this.sett.labelColor || '#999'
