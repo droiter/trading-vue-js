@@ -79,11 +79,11 @@ export default {
         },
         buy_color() {
             //return this.sett.buyColor || '#63df89'
-            return this.sett.sellColor || '#ec4662'
+            return this.sett.sellColor || '#FFFF00'
         },
         sell_color() {
             //return this.sett.sellColor || '#ec4662'
-            return this.sett.buyColor || '#63df89'
+            return this.sett.buyColor || '#EE82EE'
         },
         label_color() {
             return this.sett.labelColor || '#999'

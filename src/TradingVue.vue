@@ -103,7 +103,7 @@ export default {
         colorCandleDw: {
             type: String,
             //default: '#e54150'
-            default: '#23a776'
+            default: '#00FFFF' //'#23a776'
         },
         colorWickUp: {
             type: String,
@@ -113,7 +113,7 @@ export default {
         colorWickDw: {
             type: String,
             //default: '#e5415088'
-            default: '#23a776'
+            default: '#00FFFF' //'#23a776'
         },
         colorWickSm: {
             type: String,
