@@ -64,8 +64,9 @@ export default {
             return this.$props.settings
         },
         new_font() {
-            return this.sett.font ||
-            '12px ' + this.$props.font.split('px').pop()
+            //return this.sett.font ||
+            //'12px ' + this.$props.font.split('px').pop()
+            return '14px ' + this.$props.font.split('px').pop()
         },
         flag_color() {
             return this.sett.flagColor || '#4285f4'
