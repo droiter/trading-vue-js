@@ -25,7 +25,7 @@ export default {
                 else {
                     x = layout.width*p[5]
                 }
-                console.log("legend, x", i, x)
+                //console.log("legend, x", i, x)
                 ctx.setLineDash([10, 10])
                 //ctx.moveTo(x, 0)
                 //ctx.lineTo(x, this.layout.height)
@@ -51,7 +51,7 @@ export default {
                 y = this.layout.height * (1.0 - pos)
                 y = Math.floor(y)
             }
-            console.log("legend, y", y)
+            //console.log("legend, y", y)
 
             let w = ctx.measureText(p[1]).width + 10
 
