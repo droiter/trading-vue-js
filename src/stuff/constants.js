@@ -13,10 +13,16 @@ const WEEK = DAY * 7
 const MONTH = WEEK * 4
 const YEAR = DAY * 365
 
+// const MONTHMAP = [
+//     "Jan", "Feb", "Mar", "Apr",
+//     "May", "Jun","Jul", "Aug",
+//     "Sep", "Oct","Nov", "Dec"
+// ]
+
 const MONTHMAP = [
-    "Jan", "Feb", "Mar", "Apr",
-    "May", "Jun","Jul", "Aug",
-    "Sep", "Oct","Nov", "Dec"
+    "1月", "2月", "3月", "4月",
+    "5月", "6月","7月", "8月",
+    "9月", "10月","11月", "12月"
 ]
 
 // Grid time steps

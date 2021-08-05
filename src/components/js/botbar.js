@@ -44,6 +44,7 @@ export default class Botbar {
         for (var p of this.layout.botbar.xs) {
 
             let lbl = this.format_date(p)
+            //console.log("update", lbl)
 
             if (p[0] > width - sb) continue
 
@@ -109,6 +110,8 @@ export default class Botbar {
         //t += new Date(t).getTimezoneOffset() * MINUTE
         let d = new Date(tZ)
 
+        //console.log("format_data", p, t, k, tZ, d)
+
         if (p[2] === YEAR || Utils.year_start(t) === t) {
             return d.getUTCFullYear()
         }
@@ -136,17 +139,21 @@ export default class Botbar {
         //t += new Date(t).getTimezoneOffset() * MINUTE
         let d = new Date(t + k * this.$p.timezone * HOUR)
 
+        //console.log("format_cursor_x", t, ti, k, d)
+
         if (ti === YEAR) {
             return d.getUTCFullYear()
         }
 
         if (ti < YEAR) {
-            var yr = '`' + `${d.getUTCFullYear()}`.slice(-2)
+            //var yr = '`' + `${d.getUTCFullYear()}`.slice(-2)
+            var yr = `${d.getUTCFullYear()}`.slice(-2)
             var mo = MONTHMAP[d.getUTCMonth()]
             var dd = '01'
         }
         if (ti <= WEEK) dd = d.getUTCDate()
-        let date = `${dd} ${mo} ${yr}`
+        //let date = `${dd} ${mo} ${yr}`
+        let date = `${yr}年${mo}${dd}日`
         let time = ''
 
         if (ti < DAY) {
@@ -155,7 +162,7 @@ export default class Botbar {
             time = h + ":" + m
         }
 
-        return `${date}  ${time}`
+        return `${date}${time}`
 
     }
 
